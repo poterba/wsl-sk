@@ -6,6 +6,11 @@ To connect WSL to it we should start it in background. The simpliest way to do t
 
 "%tmp%\wslxrun.vbs"
 
+Install specific non-preinstalled packages:
+```bash
+sudo apt install -y dbus-x11 libgtk2.0-0 libxss-dev libasound2 mesa-utils libgles2-mesa
+```
+
 WSL has issues with x32 architecture support - use solution I've found [here](https://github.com/Microsoft/WSL/issues/2468#issuecomment-374904520):
 
 ```bash
