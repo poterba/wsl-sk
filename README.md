@@ -28,7 +28,6 @@ sudo service binfmt-support start
 ```
 
 # reboot.cmd 
-`reboot` command of WSL makes whole PC restart. Something, you wouldn't be similar with, using Oracle VirtualBox or VMWare solutions.
 `reboot.cmd` restarts LxssManager, which is equal to 'hard reset' for WSL as system.
 
 ```batch
