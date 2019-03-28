@@ -1,4 +1,4 @@
-# wsl
+# wsl-sk
 
 This option is for Windows 10 users only. [Make sure](https://aka.ms/wslinstall), you've enabled and installed WSL on your PC properly.
 
