@@ -1,12 +1,19 @@
 # wsl
 
+This option is for Windows 10 users only. [Make sure](https://aka.ms/wslinstall), you've enabled and installed WSL on your PC properly.
+
+```batch
+rem Powershell with Administrative privileges
+Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Windows-Subsystem-Linux"
+```
+
+After installation, you'll be able to run CLI with bash in emulated environment.
+
 Install some X-server for Windows (for example, [VcXsrv](https://github.com/ArcticaProject/vcxsrv/releases) or [Xming](https://sourceforge.net/projects/xming/)). 
 
-To connect WSL to it we should start it in background. The simpliest way to do that is to run wscript with actual Visual Basic script as argument. We'll create it in temporary directory:
+To connect WSL to it we should start it in background. The simpliest way to do that is to run wscript with actual Visual Basic script as argument. We'll create it in temporary directory (actually, "%tmp%\wslxrun.vbs")
 
-"%tmp%\wslxrun.vbs"
-
-Install specific non-preinstalled packages:
+Install somehow non-preinstalled but needed packages:
 ```bash
 sudo apt install -y dbus-x11 libgtk2.0-0 libxss-dev libasound2 mesa-utils libgles2-mesa
 ```
@@ -19,3 +26,13 @@ sudo update-binfmts --install i386 /usr/bin/qemu-i386-static --magic '\x7fELF\x0
 # unfortunately you should run this command @ every session start:
 sudo service binfmt-support start
 ```
+
+# reboot.cmd 
+`reboot` command of WSL makes whole PC restart. Something, you wouldn't be similar with, using Oracle VirtualBox or VMWare solutions.
+`reboot.cmd` restarts LxssManager, which is equal to 'hard reset' for WSL as system.
+
+```batch
+net stop LxssManager
+net start LxssManager
+```
+needs to be started with Administrator rights [(done automatically)](https://stackoverflow.com/a/10052222)
