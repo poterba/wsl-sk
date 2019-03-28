@@ -11,7 +11,7 @@ After installation, you'll be able to run CLI with bash in emulated environment.
 
 Install some X-server for Windows (for example, [VcXsrv](https://github.com/ArcticaProject/vcxsrv/releases) or [Xming](https://sourceforge.net/projects/xming/)). 
 
-To connect WSL to it we should start it in background. The simpliest way to do that is to run wscript with actual Visual Basic script as argument. We'll create it in temporary directory (actually, "%tmp%\wslxrun.vbs")
+To connect WSL to it we should start it in background. The simpliest way to do that is to run wscript with actual Visual Basic script as argument (we'll create it in temporary directory).
 
 Install somehow non-preinstalled but needed packages:
 ```bash
