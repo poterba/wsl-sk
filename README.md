@@ -5,6 +5,8 @@ This option is for Windows 10 users only. [Make sure](https://aka.ms/wslinstall)
 ```batch
 rem Powershell with Administrative privileges
 Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Windows-Subsystem-Linux"
+rem After reboot you can install any distributive via Store or using powershell:
+Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx -UseBasicParsing
 ```
 
 After installation, you'll be able to run CLI with bash in emulated environment.
