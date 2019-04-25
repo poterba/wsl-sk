@@ -1,26 +1,38 @@
 # wsl-sk
 
-This option is for Windows 10 users only. [Make sure](https://aka.ms/wslinstall), you've enabled and installed WSL on your PC properly.
+This option is for Windows 10 users only. 
 
+<details>
+  <summary>Install WSL</summary>
+  
+[Make sure](https://aka.ms/wslinstall), you've enabled and installed WSL on your PC properly.
 ```batch
 rem Powershell with Administrative privileges
 Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Windows-Subsystem-Linux"
 rem After reboot you can install any distributive via Store or using powershell:
 Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx -UseBasicParsing
 ```
+</details>
 
-After installation, you'll be able to run CLI with bash in emulated environment.
+After installation, you'll be able to run `bash`.
 
-Install some X-server for Windows (for example, [VcXsrv](https://github.com/ArcticaProject/vcxsrv/releases) or [Xming](https://sourceforge.net/projects/xming/)). 
+<details>
+  <summary>Install dependencies</summary>
 
-To connect WSL to it we should start it in background. The simpliest way to do that is to run wscript with actual Visual Basic script as argument (we'll create it in temporary directory).
+Install X-server for Windows (for example, [VcXsrv](https://github.com/ArcticaProject/vcxsrv/releases) or [Xming](https://sourceforge.net/projects/xming/)). 
+
+To connect WSL to it we should start it in background. The simpliest way to do that is to run wscript with actual Visual Basic script as argument ([startup script](start.cmd) creates it in temporary directory).
 
 Install somehow non-preinstalled but needed packages:
 ```bash
 sudo apt install -y dbus-x11 libgtk2.0-0 libxss-dev libasound2 mesa-utils libgles2-mesa
 ```
+</details>
 
-WSL has issues with x32 architecture support - use solution I've found [here](https://github.com/Microsoft/WSL/issues/2468#issuecomment-374904520):
+<details>
+  <summary>x32 support</summary>
+ 
+WSL has issues with x32 architecture support - you can use solution I've found [here](https://github.com/Microsoft/WSL/issues/2468#issuecomment-374904520):
 
 ```bash
 sudo apt install -y qemu-user-static
@@ -28,12 +40,18 @@ sudo update-binfmts --install i386 /usr/bin/qemu-i386-static --magic '\x7fELF\x0
 # unfortunately you should run this command @ every session start:
 sudo service binfmt-support start
 ```
+</details>
 
-# reboot.cmd 
-`reboot.cmd` restarts LxssManager, which is equal to 'hard reset' for WSL as system.
+<details>
+  <summary>Reboot</summary>
+  
+[Reboot script](reboot.cmd) restarts LxssManager, what is equal to 'hard reset' for WSL as Linux system.
 
 ```batch
 net stop LxssManager
 net start LxssManager
 ```
-needs to be started with Administrator rights [(done automatically)](https://stackoverflow.com/a/10052222)
+
+needs to be started with Administrator rights ([done automatically](https://stackoverflow.com/a/10052222))
+
+</details>
