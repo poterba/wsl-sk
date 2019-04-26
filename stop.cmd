@@ -30,5 +30,6 @@ if '%errorlevel%' NEQ '0' (
     CD /D "%~dp0"
 :--------------------------------------
 net stop LxssManager
-net start LxssManager
+rem Uncomment next line to restart
+rem net start LxssManager
 pause
