@@ -43,12 +43,13 @@ sudo service binfmt-support start
 </details>
 
 <details>
-  <summary>Reboot</summary>
+  <summary>Shutdown</summary>
   
-[Reboot script](reboot.cmd) restarts LxssManager, what is equal to 'hard reset' for WSL as Linux system.
+[Shutdown script](stop.cmd) restarts LxssManager, what is equal to 'hard reset' for WSL as Linux system.
 
 ```batch
 net stop LxssManager
+rem To start WSL again, you can use:
 net start LxssManager
 ```
 
