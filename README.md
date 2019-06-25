@@ -12,22 +12,18 @@ Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Windows-Subsystem-
 rem After reboot you can install any distributive via Store or using powershell:
 Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx -UseBasicParsing
 ```
-</details>
 
 After installation, you'll be able to run `bash`.
-
-<details>
-  <summary>Install dependencies</summary>
-
-Install X-server for Windows (for example, [VcXsrv](https://github.com/ArcticaProject/vcxsrv/releases) or [Xming](https://sourceforge.net/projects/xming/)). 
-
-To connect WSL to it we should start it in background. The simpliest way to do that is to run wscript with actual Visual Basic script as argument ([startup script](start.cmd) creates it in temporary directory).
+</details>
 
 Install somehow non-preinstalled but needed packages:
 ```bash
 sudo apt install -y dbus-x11 libgtk2.0-0 libxss-dev libasound2 mesa-utils libgles2-mesa
 ```
-</details>
+
+Install X-server for Windows (for example, [VcXsrv](https://github.com/ArcticaProject/vcxsrv/releases) or [Xming](https://sourceforge.net/projects/xming/)). 
+
+To connect WSL to it we should start it in background. The simpliest way to do that is to run wscript with actual Visual Basic script as argument ([startup script](start.cmd) creates it in temporary directory).
 
 <details>
   <summary>x32 support</summary>
@@ -41,17 +37,11 @@ sudo update-binfmts --install i386 /usr/bin/qemu-i386-static --magic '\x7fELF\x0
 sudo service binfmt-support start
 ```
 </details>
-
-<details>
-  <summary>Reboot</summary>
   
-[Reboot script](reboot.cmd) restarts LxssManager, what is equal to 'hard reset' for WSL as Linux system.
+[Shutdown script](stop.cmd) stops LxssManager, and needs to be started with Administrator rights ([done automatically](https://stackoverflow.com/a/10052222))
 
 ```batch
 net stop LxssManager
+rem To start WSL again, you can use:
 net start LxssManager
 ```
-
-needs to be started with Administrator rights ([done automatically](https://stackoverflow.com/a/10052222))
-
-</details>
