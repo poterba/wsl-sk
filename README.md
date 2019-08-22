@@ -14,7 +14,6 @@ Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx -UseB
 ```
 
 After installation, you'll be able to run `bash`.
-</details>
 
 Update your system:
 ```bash
@@ -22,11 +21,7 @@ wsl
 sudo apt update
 sudo apt upgrade
 ```
-
-Install somehow non-preinstalled but needed packages:
-```bash
-sudo apt install -y libgtk2.0-0 libxss-dev libasound2 mesa-utils libgles2-mesa
-```
+</details>
 
 Install X-server for Windows (for example, [VcXsrv](https://github.com/ArcticaProject/vcxsrv/releases) or [Xming](https://sourceforge.net/projects/xming/)). 
 
