@@ -9,7 +9,7 @@ This option is for Windows 10 users only.
 ```batch
 rem Powershell with Administrative privileges
 Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Windows-Subsystem-Linux"
-rem After reboot you can install any distributive via Store or using powershell:
+rem Install any distributive via Store or using Powershell (e.g. Ubuntu 18.04):
 Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile Ubuntu.appx -UseBasicParsing
 ```
 
