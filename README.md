@@ -15,7 +15,7 @@ How to setup WSL with GUI?
 rem Powershell with Administrative privileges
 Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Windows-Subsystem-Linux"
 rem Install any distributive via Store or using Powershell (e.g. Ubuntu 18.04):
-Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile Ubuntu.appx -UseBasicParsing
+Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-2004 -OutFile Ubuntu.appx -UseBasicParsing
 ```
 
 After installation, you'll be able to run `bash` and update your system:
