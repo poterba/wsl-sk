@@ -9,20 +9,21 @@ How to setup WSL with GUI?
 ## Installation
 
 ### WSL
-  
-[Install](https://aka.ms/wslinstall) WSL on your PC:
-```batch
-rem Powershell with Administrative privileges
+
+You'll need Powershell with Administrative privileges
+
+- [Install WSL](https://aka.ms/wslinstall) on your PC:
+```powershell
 Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Windows-Subsystem-Linux"
-rem Install any distributive via Store or using Powershell (e.g. Ubuntu 18.04):
+```
+
+- Install any distributive [via Store](https://aka.ms/wslstore) or using Powershell (e.g. Ubuntu 20.04):
+
+```powershell
 Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-2004 -OutFile Ubuntu.appx -UseBasicParsing
 ```
 
-After installation, you'll be able to run `bash` and update your system:
-```bash
-sudo apt update
-sudo apt upgrade
-```
+After installation, you'll be able to run `wsl` and `bash`.
 
 ### X-server
 
@@ -32,7 +33,7 @@ To connect WSL to it we should start it in background. The simpliest way to do t
 
 #### x32 support
  
-WSL has issues with x32 architecture support - you can use solution I've found [here](https://github.com/Microsoft/WSL/issues/2468#issuecomment-374904520):
+WSL has issues with x32 architecture support - you can use [this](https://github.com/Microsoft/WSL/issues/2468#issuecomment-374904520) solution:
 
 ```bash
 sudo apt install -y qemu-user-static
