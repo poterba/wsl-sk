@@ -29,6 +29,12 @@ After installation, you'll be able to run `wsl` and `bash`.
 
 Install X-server for Windows (for example, [VcXsrv](https://github.com/ArcticaProject/vcxsrv/releases) or [Xming](https://sourceforge.net/projects/xming/)). 
 
+```powershell
+choco install vcxsrv
+rem or
+choco install xming
+```
+
 To connect WSL to it we should start it in background. The simpliest way to do that is to run wscript with actual Visual Basic script as argument ([startup script](start.cmd) creates it in temporary directory).
 
 #### x32 support
