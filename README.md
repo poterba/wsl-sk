@@ -12,9 +12,9 @@ How to setup WSL with GUI?
 
 You'll need Powershell with Administrative privileges
 
-- [Install WSL](https://aka.ms/wslinstall) on your PC:
+- [Install WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10) on your PC:
 ```powershell
-Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Windows-Subsystem-Linux"
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 ```
 
 - Install any distributive [via Store](https://aka.ms/wslstore) or using Powershell (e.g. Ubuntu 18.04):
@@ -24,6 +24,12 @@ Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile Ubuntu.appx -UseB
 ```
 
 After installation, you'll be able to run `wsl` and `bash`.
+
+Upgrade to WSL2:
+```powershell
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+wsl --set-default-version 2
+```
 
 ### X-server
 
