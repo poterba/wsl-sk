@@ -31,7 +31,7 @@ Install X-server for Windows (for example, [VcXsrv](https://github.com/ArcticaPr
 
 ```powershell
 choco install vcxsrv
-rem or
+# or
 choco install xming
 ```
 
