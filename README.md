@@ -17,10 +17,10 @@ You'll need Powershell with Administrative privileges
 Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Windows-Subsystem-Linux"
 ```
 
-- Install any distributive [via Store](https://aka.ms/wslstore) or using Powershell (e.g. Ubuntu 20.04):
+- Install any distributive [via Store](https://aka.ms/wslstore) or using Powershell (e.g. Ubuntu 18.04):
 
 ```powershell
-Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-2004 -OutFile Ubuntu.appx -UseBasicParsing
+Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile Ubuntu.appx -UseBasicParsing
 ```
 
 After installation, you'll be able to run `wsl` and `bash`.
