@@ -14,8 +14,9 @@ You'll need Powershell with Administrative privileges
 
 - [Install WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10) on your PC:
 ```powershell
-dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all
 ```
+Enter 'Y' to restart your system.
 
 - Install any distributive [via Store](https://aka.ms/wslstore) or using Powershell (e.g. Ubuntu 18.04):
 
