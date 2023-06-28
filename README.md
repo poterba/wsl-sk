@@ -18,6 +18,11 @@ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux 
 ```
 Enter 'Y' to restart your system.
 
+For WSL2 you'll need Hyper-V:
+```powershell
+DISM /Online /Enable-Feature /All /FeatureName:Microsoft-Hyper-V
+```
+
 - Install any distributive [via Store](https://aka.ms/wslstore) or using Powershell (e.g. Ubuntu 18.04):
 
 ```powershell
